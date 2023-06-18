@@ -19,6 +19,29 @@ public class Toy {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        // If the object is compared with itself then return true
+        if (o == this) {
+            return true;
+        }
+
+         /* Check if o is an instance of Toy or not
+          "null instanceof [type]" also returns false */
+        if (!(o instanceof Toy)) {
+            return false;
+        }
+
+        // typecast o to Toy so that we can compare data members
+        Toy toy = (Toy) o;
+
+        // Compare the data members and return accordingly
+        return id == toy.getId()
+                && name == toy.getName()
+                && Double.compare(weight, toy.getWeight()) == 0
+                && Double.compare(freqOfGetting, toy.getFreqOfGetting()) == 0;
+    }
+
     public int getId() {
         return id;
     }
@@ -42,7 +65,8 @@ public class Toy {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    public int setQuantity2(int quantity){
+
+    public int setQuantity2(int quantity) {
         this.quantity = quantity;
         return quantity;
     }
@@ -60,7 +84,7 @@ public class Toy {
     }
 
     public double setFreqOfGetting() {
-        this.freqOfGetting = this.weight/100;
+        this.freqOfGetting = this.weight / 100;
         return freqOfGetting;
     }
 
@@ -71,7 +95,8 @@ public class Toy {
         this.weight = weight;
         this.freqOfGetting = copmputeVal();
     }
-    private double copmputeVal(){
-        return this.weight /100;
+
+    private double copmputeVal() {
+        return this.weight / 100;
     }
 }

@@ -9,5 +9,8 @@
         <module name="attestation" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Jack" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
